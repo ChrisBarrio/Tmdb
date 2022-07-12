@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+* {
+  font-family: 'Noto Serif', serif;
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  -webkit-transition: all .2s linear;
+  transition: all .2s linear;
+}
+
+.container-peliculas,
+.container-series {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(250px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 1.2rem;
+}
+
+.container-peliculas .card,
+.container-series .card {
+  height: 31rem;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+          box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.container-peliculas .card .card-img,
+.container-series .card .card-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: relative;
+}
+
+.container-peliculas .card .card-body,
+.container-series .card .card-body {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  height: 100%;
+  width: 100%;
+  top: 0%;
+  left: 0%;
+  opacity: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.container-peliculas .card .card-body:hover,
+.container-series .card .card-body:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow: auto;
+}
+
+.container-peliculas .card .card-body:hover .card-body-text,
+.container-series .card .card-body:hover .card-body-text {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  padding: 1rem;
+}
+
+.container-peliculas .card .card-body:hover .card-body-text .card-title,
+.container-series .card .card-body:hover .card-body-text .card-title {
+  color: white;
+}
+
+.paginacion-fixed {
+  position: fixed;
+  background-color: rgba(50, 168, 252, 0.8);
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  height: 5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.paginacion-fixed ul {
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
